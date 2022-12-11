@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.control-button{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: hwb(194deg 0% 7% / 87%);
+    z-index: 1;
+}
+.control-button span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #f00;
+    color: #eee;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+
+}
+.info-container{
+    width: 80%;
+    margin: 15px auto 0;
+    border: 1px solid blue;
+    display: flex;
+    padding: 15px;
+    background-color: #f6f6f6;
+
+}
+.info-container .name{
+    flex: 1;
+
+}
+.info-container  .tries{
+    flex: 1;
+    text-align: right;
+}
+
+.game-container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto 0;  
+}
+.game-container.no-clicking{
+    pointer-events: none;
+}
+.game-container .img-box{
+   flex: 1 0 200px;
+   height: 200px;
+   position: relative;
+   transition: transform 0.5s;
+   transform-style: preserve-3d;
+   cursor: pointer;
+   margin: 0 10px 20px;
+   
+  
+}
+.game-container .img-box.same-box,
+.game-container .img-box.is-flip{
+    transform: rotateY(180deg);
+}
+
+.game-container .img-box .front{
+  background-color: #333;
+  line-height: 200px;
+    
+}
+.game-container .img-box .front::before{
+    content: "!";
+    font-size: 100px;
+    font-weight: bold;
+    color: #eee;
+}
+.game-container .img-box .back{
+    background-color: #607d8b;
+    transform: rotateY(180deg);
+   
+
+}
+.img-box .back img{
+ width: 140px;
+ height: 140px;
+
+}
+.game-container .img-box .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border: 2px solid blue;
+   
+    
+}
